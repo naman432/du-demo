@@ -14,7 +14,7 @@ const userRoutes = require("./Routes/user");
 app.use(express.json({ limit: "50mb" }));
 //CORS Configuration
 app.use(cors({
-  origin: ["http://ec2-52-66-186-107.ap-south-1.compute.amazonaws.com"],
+  // origin: ["http://ec2-52-66-186-107.ap-south-1.compute.amazonaws.com"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
@@ -70,12 +70,12 @@ app.use(xss());
 app.disable("x-powered-by");
 
 //Global Error Handling Middleware
-app.use((err, req, res) => {
-  console.error(err.stack);
-  res.status(500).json({
-    message: "Something went wrong!",
-  });
-});
+// app.use((err, req, res) => {
+//   console.error(err.stack);
+//   res.status(500).json({
+//     message: "Something went wrong!",
+//   });
+// });
 
 //Routing
 app.use("/api", userRoutes);
