@@ -1,0 +1,6 @@
+{
+  "env": { "node": true },
+  "extends": ["eslint:recommended"],
+  "plugins": ["prettier"],
+  "rules": { "no-console": "error", "prettier/prettier": "error" }
+}
